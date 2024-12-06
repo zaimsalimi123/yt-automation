@@ -23,8 +23,8 @@ def upload_video():
             'privacyStatus': 'public',  # Set to "public" for visibility
         }
     }
-
-    media = MediaFileUpload('test.mp4', chunksize=-1, resumable=True)
+    #Add Video Path
+    media = MediaFileUpload('path/to/your/video.mp4', chunksize=-1, resumable=True)
     request = youtube.videos().insert(part='snippet,status', body=body, media_body=media)
 
     response = request.execute()
